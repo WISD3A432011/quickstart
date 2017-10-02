@@ -27,7 +27,11 @@ use Illuminate\Http\Request;
                 ->withErrors($validator);
         }
 
-        // 建立該任務..
+        $task = new Task;
+        $task->name = $request->name;
+        $task->save();
+
+        return redirect('/');
     });
 
     /**
